@@ -1,0 +1,98 @@
+:root {
+  --color: black;
+  --bg: white;
+  --normal: 16px;
+  --title: 64px;
+  --heading: 32px;
+  --subheading: 24px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color: white;
+    --bg: black;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--bg);
+  color: var(--color);
+  font-size: var(--normal);
+  font-family: 'Outfit';
+  font-weight: normal;
+}
+
+button, a, textarea {
+  font-family: inherit;
+  font-size: var(--normal);
+  font-weight: normal;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+header .auto {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav {
+  display: flex;
+  height: 64px;
+}
+
+nav a {
+  padding: 0;
+  min-width: 128px;
+  height: 100%;
+  transition: all 250ms;
+}
+
+nav a:hover {
+  background-color: var(--color);
+  color: var(--bg);
+}
+
+main {
+  overflow: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  outline: 0;
+}
+
+h1, h2, h3 {
+  font-weight: normal;
+}
+
+h1 {
+  color: inherit;
+  font-size: var(--title);
+}
+
+.auto {
+  width: 1024px;
+  margin: auto;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

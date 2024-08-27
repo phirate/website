@@ -1,0 +1,45 @@
+<script lang="ts">
+  export let disabled = false
+
+  let pressed = false
+
+  function mousedown(ev: MouseEvent) {
+    pressed = true
+  }
+
+  function mouseup(ev: MouseEvent) {
+    pressed = false
+  }
+</script>
+
+<button {disabled} on:mousedown={mousedown} on:mouseup={mouseup} on:mouseleave={mouseup} class:pressed>
+  <span class="label">
+    <slot></slot>
+  </span>
+</button>
+
+<style>
+  button {
+    margin: 0;
+    padding: 8px 16px;
+    background-color: transparent;
+    color: var(--color);
+    border-radius: 4px;
+    border: 1px solid var(--color);
+    transition: all 250ms;
+  }
+
+  button:hover, button:focus {
+    background-color: var(--color);
+    color: var(--bg);
+  }
+
+  button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  button.pressed {
+    transform: scale(0.9);
+  }
+</style>
