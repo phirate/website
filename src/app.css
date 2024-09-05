@@ -50,21 +50,34 @@ header .auto {
   justify-content: space-between;
 }
 
+#logo {
+  padding: 0 32px;
+}
+
 nav {
   display: flex;
+  align-items: center;
   height: 64px;
 }
 
 nav a {
-  padding: 0;
-  min-width: 128px;
+  display: flex;
+  padding: 0 32px;
   height: 100%;
+  border-radius: 8px;
   transition: all 250ms;
 }
 
 nav a:hover {
-  background-color: var(--color);
-  color: var(--bg);
+  opacity: 0.75;
+}
+
+header #action {
+  width: 25%;
+}
+
+header button {
+  margin-inline: 8px;
 }
 
 main {

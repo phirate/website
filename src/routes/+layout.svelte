@@ -1,6 +1,22 @@
 <script lang="ts">
   import Button from '$lib/components/Button.svelte'
+  import Nav from '$lib/components/Nav.svelte'
   import '../app.css'
+
+  let links = [
+    {
+      name: 'Home',
+      href: '/'
+    },
+    {
+      name: 'Courses',
+      href: '/courses'
+    },
+    {
+      name: 'Blog',
+      href: '/blog'
+    }
+  ]
 </script>
 
 <header>
@@ -8,12 +24,7 @@
     <a id="logo" class="center" href="/">
       Phirate
     </a>
-    <nav>
-      <a class="center" href="/">Home</a>
-    </nav>
-    <div id="actions" class="center">
-      <Button>Login</Button>
-    </div>
+    <Nav {links}></Nav>
   </div>
 </header>
 <main>

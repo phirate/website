@@ -20,18 +20,21 @@
 
 <style>
   button {
-    margin: 0;
     padding: 8px 16px;
     background-color: transparent;
     color: var(--color);
     border-radius: 4px;
-    border: 1px solid var(--color);
+    border: 2px solid var(--color);
     transition: all 250ms;
   }
 
-  button:hover, button:focus {
+  button:hover {
     background-color: var(--color);
     color: var(--bg);
+  }
+
+  button:focus:not(:hover) {
+    box-shadow: 0px 0px 8px 0px var(--color);
   }
 
   button:disabled {
