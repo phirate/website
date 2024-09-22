@@ -1,6 +1,7 @@
 :root {
-  --color: black;
+  --color: #171923;
   --bg: white;
+  --accent: #4b83ff;
   --normal: 16px;
   --title: 64px;
   --heading: 32px;
@@ -10,7 +11,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --color: white;
-    --bg: black;
+    --bg: #171923;
   }
 }
 
@@ -24,6 +25,7 @@ body {
   font-size: var(--normal);
   font-family: 'Outfit';
   font-weight: normal;
+  overflow-x: hidden;
 }
 
 button, a, textarea {

@@ -34,7 +34,7 @@
   }
 
   button:focus:not(:hover) {
-    box-shadow: 0px 0px 8px 0px var(--color);
+    border: 2px solid var(--accent);
   }
 
   button:disabled {
