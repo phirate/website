@@ -17,7 +17,7 @@
       Never pay for revision material again.
     </p>
     <div transition:fly={{ y: 32, duration: 1000, delay: 500 }}>
-      <Button>Get Started</Button>
+      <Button>Coming Soon</Button>
     </div>
     <svg
       xmlns="http://www.w3.org/2000/svg"

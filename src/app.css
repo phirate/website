@@ -19,7 +19,7 @@
 
 *::selection {
   background-color: var(--accent);
-  color: white;
+  color: var(--bg);
 }
 
 body {
