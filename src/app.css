@@ -1,11 +1,12 @@
 :root {
   --color: #171923;
   --bg: white;
-  --accent: #4b83ff;
+  --accent: #1a5fff;
   --normal: 16px;
   --title: 64px;
   --heading: 32px;
   --subheading: 24px;
+  --nav: 64px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -59,7 +60,7 @@ header .auto {
 nav {
   display: flex;
   align-items: center;
-  height: 64px;
+  height: var(--nav);
 }
 
 nav a {
@@ -93,7 +94,7 @@ a {
 }
 
 h1, h2, h3 {
-  font-weight: normal;
+  font-weight: 600;
 }
 
 h1 {
@@ -110,4 +111,10 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media screen and (max-width: 1024px) {
+  .auto {
+    width: 100%;
+  }
 }
