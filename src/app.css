@@ -13,7 +13,13 @@
   :root {
     --color: white;
     --bg: #171923;
+    --accent: #4b83ff;
   }
+}
+
+*::selection {
+  background-color: var(--accent);
+  color: white;
 }
 
 body {
@@ -46,6 +52,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 1;
 }
 
 header .auto {
@@ -72,7 +79,7 @@ nav a {
 }
 
 nav a:hover {
-  opacity: 0.75;
+  color: var(--accent);
 }
 
 header #action {
