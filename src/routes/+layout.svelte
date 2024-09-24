@@ -19,6 +19,13 @@
   ]
 </script>
 
+<svelte:head>
+  <meta name="og:title" content="Phirate">
+  <meta name="og:description" content="The free & open-source alternative to Brilliant, Save My Exams, and other education platforms">
+  <meta name="og:url" content="https://phirate.pages.dev">
+  <title>Phirate</title>
+</svelte:head>
+
 <header>
   <div class="auto">
     <a id="logo" class="center" href="/">
