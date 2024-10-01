@@ -1,9 +1,31 @@
 <script lang="ts">
+  import Accordion from '$lib/components/Accordion.svelte'
+  import Card from '$lib/components/Card.svelte'
   import { onMount } from 'svelte'
   import { fly } from 'svelte/transition'
 
   let ready = false
   onMount(() => (ready = true))
+
+  let subjects: Record<string, string[]> = {
+    Mathematics: [
+      'Geometry'
+    ],
+    Biology: [
+      'Genetics'
+    ],
+    Chemistry: [
+      'Energetics'
+    ],
+    Physics: [
+      'Kinematics',
+      'Optics'
+    ],
+    Informatics: [
+      'Programming',
+      'Olympiad'
+    ]
+  }
 </script>
 
 <section id="banner">
@@ -12,28 +34,26 @@
     <h1 transition:fly={{ y: -32, duration: 1000, delay: 500 }}>Browse Interactive Lessons</h1>
   {/if}
 </section>
+<section class="auto">
+  {#each Object.keys(subjects) as subject}
+    <Accordion title={subject}>
+      <div class="list">
+        {#each Object.values(subjects[subject]) as course}
+          <Card title={course} href={`/courses/${subject.toLowerCase()}/${course.toLowerCase().split(' ').join('_')}`} src="/favicon.png"></Card>
+        {/each}
+      </div>
+    </Accordion>
+  {/each}
+</section>
 
 <style>
-  #banner {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
+  .auto {
+    padding: 32px;
   }
 
-  #pill {
-    margin: 0 0 8px;
-    padding: 4px 16px;
-    border: 2px solid var(--color);
-    border-radius: 100vmax;
-    text-transform: uppercase;
-    font-size: 16px;
-  }
-
-  #banner h1 {
-    margin-block: 0 0;
+  .list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(192px, 1fr));
+    gap: 16px;
   }
 </style>

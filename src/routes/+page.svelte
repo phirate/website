@@ -14,7 +14,7 @@
   {#if ready}
     <h1 transition:fly={{ y: -32, duration: 1000 }}>Free Forever</h1>
     <p class="subtitle" transition:fly={{ y: 32, duration: 1000, delay: 250 }}>
-      Never pay for revision material again.
+      Never pay for your education again.
     </p>
     <div transition:fly={{ y: 32, duration: 1000, delay: 500 }}>
       <Button>Coming Soon</Button>

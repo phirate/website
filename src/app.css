@@ -52,6 +52,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
+  background-color: var(--bg);
   z-index: 1;
 }
 
@@ -90,10 +91,6 @@ header button {
   margin-inline: 8px;
 }
 
-main {
-  overflow: auto;
-}
-
 a {
   color: inherit;
   text-decoration: none;
@@ -101,15 +98,62 @@ a {
 }
 
 h1, h2, h3 {
+  color: inherit;
   font-weight: 600;
 }
 
 h1 {
-  color: inherit;
   font-size: var(--title);
 }
 
+h2 {
+  font-size: var(--heading);
+}
+
+h3 {
+  font-size: var(--subheading);
+}
+
+p a {
+  position: relative;
+  color: transparent;
+  font-weight: bold;
+  background-color: var(--accent);
+  background-image: linear-gradient(to right, var(--color), var(--color));
+  background-position: 100%;
+  background-size: 0%;
+  background-repeat: no-repeat;
+  background-clip: text;
+  -webkit-background-clip: text;
+  transition: background-size 250ms ease-out;
+}
+
+p a:hover {
+  background-position: 0;
+  background-size: 100%;
+}
+
+p a:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  width: 0;
+  bottom: 0;
+  background: var(--accent);
+  height: 2px;
+  border-radius: 1px;
+  transition: width 250ms ease-out;
+}
+
+p a:hover:after {
+  left: 0;
+  right: auto;
+  width: 100%;
+}
+
 .auto {
+  box-sizing: border-box;
   width: 1024px;
   margin: auto;
 }
@@ -118,6 +162,29 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#pill {
+  margin: 0 0 8px;
+  padding: 4px 16px;
+  border: 2px solid var(--color);
+  border-radius: 100vmax;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+#banner h1 {
+  margin-block: 0 0;
 }
 
 @media screen and (max-width: 1024px) {
