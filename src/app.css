@@ -156,12 +156,17 @@ p a:hover:after {
   box-sizing: border-box;
   width: 1024px;
   margin: auto;
+  overflow: auto;
 }
 
 .center {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.top {
+  margin-top: var(--nav);
 }
 
 #banner {
