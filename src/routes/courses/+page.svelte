@@ -32,6 +32,7 @@
   {#if ready}
     <span id="pill" transition:fly={{ y: -32, duration: 1000 }}>Courses</span>
     <h1 transition:fly={{ y: -32, duration: 1000, delay: 500 }}>Browse Interactive Lessons</h1>
+    <p>Master topics through step-by-step learning paths.</p>
   {/if}
 </section>
 <section class="auto">

@@ -10,7 +10,10 @@
 </script>
 
 <div class="accordion">
-  <span class="summary" on:click={click}>{title}</span>
+  <span class="summary" on:click={click}>
+    <img src="" alt="">
+    {title}
+  </span>
   {#if open}
     <div class="details" transition:slide>
       <slot></slot>
@@ -29,13 +32,13 @@
 
   .summary {
     box-sizing: border-box;
-    padding: 16px;
+    padding: 32px;
     font-size: 32px;
     cursor: pointer;
   }
 
   .details {
     box-sizing: border-box;
-    padding: 16px 32px 32px;
+    padding: 0 32px 32px;
   }
 </style>
