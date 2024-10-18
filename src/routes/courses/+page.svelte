@@ -7,23 +7,68 @@
   let ready = false
   onMount(() => (ready = true))
 
-  let subjects: Record<string, string[]> = {
+  let subjects: Record<string, { name: string, icon: string }[]> = {
     Mathematics: [
-      'Geometry'
+      {
+        name: 'Geometry',
+        icon: 'category',
+      },
+      {
+        name: 'Calculus',
+        icon: 'function',
+      },
+      {
+        name: 'Statistics',
+        icon: 'bar_chart',
+      },
     ],
     Biology: [
-      'Genetics'
+      {
+        name: 'Microbiology',
+        icon: 'microbiology',
+      },
+      {
+        name: 'Genetics',
+        icon: 'genetics',
+      },
     ],
     Chemistry: [
-      'Energetics'
+      {
+        name: 'Energetics',
+        icon: 'explosion',
+      },
+      {
+        name: 'Equilibria',
+        icon: 'balance',
+      },
+      {
+        name: 'Organics',
+        icon: 'oil_barrel',
+      },
     ],
     Physics: [
-      'Kinematics',
-      'Optics'
+      {
+        name: 'Kinematics',
+        icon: 'trail_length',
+      },
+      {
+        name: 'Optics',
+        icon: 'flare',
+      },
+      {
+        name: 'Electricity',
+        icon: 'bolt',
+      },
     ],
     Informatics: [
-      'Programming',
-      'Olympiad'
+      {
+        name: 'Programming',
+        icon: 'code',
+      },
+      {
+        name: 'Olympiad',
+        icon: 'trophy',
+      },
     ]
   }
 </script>
@@ -32,7 +77,7 @@
   {#if ready}
     <span id="pill" transition:fly={{ y: -32, duration: 1000 }}>Courses</span>
     <h1 transition:fly={{ y: -32, duration: 1000, delay: 500 }}>Browse Interactive Lessons</h1>
-    <p>Master topics through step-by-step learning paths.</p>
+    <p id="caption" transition:fly={{ y: -32, duration: 1000, delay: 1000 }}>Master topics through step-by-step learning paths.</p>
   {/if}
 </section>
 <section class="auto">
@@ -40,7 +85,7 @@
     <Accordion title={subject}>
       <div class="list">
         {#each Object.values(subjects[subject]) as course}
-          <Card title={course} href={`/courses/${subject.toLowerCase()}/${course.toLowerCase().split(' ').join('_')}`} src="/favicon.png"></Card>
+          <Card title={course.name} href={`/courses/${subject.toLowerCase()}/${course.name.toLowerCase().split(' ').join('_')}`} icon={course.icon}></Card>
         {/each}
       </div>
     </Accordion>

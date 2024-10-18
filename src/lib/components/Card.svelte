@@ -1,12 +1,14 @@
 <script lang="ts">
+  import Icon from './Icon.svelte'
+
   export let title: string
-  export let src: string
+  export let icon: string
   export let href: string
 </script>
 
 <a class="card" {href}>
   <div class="image">
-    <img src="{src}" alt="{title}" />
+    <Icon style="font-size: 64px;">{icon}</Icon>
   </div>
   <div class="content">
     <span class="title">{title}</span>
@@ -26,22 +28,24 @@
   }
 
   .card:hover {
-    transform: rotate(5deg) scale(1.05);
+    border-color: var(--accent);
+  }
+
+  .card:hover .image {
+    transform: rotate(5deg) scale(1.25);
   }
 
   .image {
     box-sizing: border-box;
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 15%;
     width: 100%;
     aspect-ratio: 1;
     overflow: hidden;
     border-radius: 8px;
-  }
-
-  img {
-    width: 100%;
+    transition: all 250ms;
   }
 
   .content {

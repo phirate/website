@@ -188,6 +188,10 @@ p a:hover:after {
   font-size: 16px;
 }
 
+#caption {
+  font-size: 20px;
+}
+
 #banner h1 {
   margin-block: 0 0;
 }

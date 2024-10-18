@@ -10,10 +10,7 @@
 </script>
 
 <div class="accordion">
-  <span class="summary" on:click={click}>
-    <img src="" alt="">
-    {title}
-  </span>
+  <span class="summary" on:click={click}>{title}</span>
   {#if open}
     <div class="details" transition:slide>
       <slot></slot>
