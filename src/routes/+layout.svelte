@@ -3,6 +3,7 @@
   import Button from '$lib/components/Button.svelte'
   import Nav from '$lib/components/Nav.svelte'
   import '../app.css'
+  import { user } from '$lib/user'
 
   let links = [
     {
@@ -16,8 +17,25 @@
     {
       name: 'Blog',
       href: '/blog'
+    },
+    {
+      name: 'Join',
+      href: '/join'
     }
   ]
+
+  let anonymous = true
+  let name = ''
+  let href = ''
+
+  user.subscribe((user) => {
+    if (user) {
+      anonymous = false
+      name = user.name
+      href = '/users/' + user.$id
+      links[links.length - 1] = { name, href }
+    }
+  })
 </script>
 
 <svelte:head>

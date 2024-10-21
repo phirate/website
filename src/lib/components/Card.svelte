@@ -1,7 +1,7 @@
 <script lang="ts">
   import Icon from './Icon.svelte'
 
-  export let title: string
+  export let title: string | undefined = undefined
   export let icon: string
   export let href: string
 </script>
@@ -10,10 +10,12 @@
   <div class="image">
     <Icon style="font-size: 64px;">{icon}</Icon>
   </div>
-  <div class="content">
+  {#if title}
     <span class="title">{title}</span>
-    <slot></slot>
-  </div>
+    <div class="content">
+      <slot></slot>
+    </div>
+  {/if}
 </a>
 
 <style>
@@ -24,6 +26,7 @@
     align-items: center;
     border: 2px solid var(--color);
     border-radius: 8px;
+    overflow: hidden;
     transition: all 250ms;
   }
 

@@ -1,5 +1,6 @@
 <script lang="ts">
   export let disabled = false
+  export let type: 'button' | 'submit' | 'reset' | null | undefined = 'button'
 
   let pressed = false
 
@@ -12,7 +13,14 @@
   }
 </script>
 
-<button {disabled} on:mousedown={mousedown} on:mouseup={mouseup} on:mouseleave={mouseup} class:pressed>
+<button
+  {disabled}
+  {type}
+  on:mousedown={mousedown}
+  on:mouseup={mouseup}
+  on:mouseleave={mouseup}
+  class:pressed
+>
   <span class="label">
     <slot></slot>
   </span>

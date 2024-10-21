@@ -26,7 +26,6 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100vh;
   background-color: var(--bg);
   color: var(--color);
   font-size: var(--normal);
@@ -35,15 +34,15 @@ body {
   overflow-x: hidden;
 }
 
-button, a, textarea {
+button, a, textarea, input {
   font-family: inherit;
   font-size: var(--normal);
   font-weight: normal;
+  outline: none;
+  border: none;
 }
 
 button {
-  border: none;
-  outline: none;
   cursor: pointer;
 }
 
