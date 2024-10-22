@@ -18,7 +18,7 @@
 </section>
 <section class="auto">
   {#each Object.keys(subjects) as subject}
-    <Accordion title={subject}>
+    <Accordion title={subject} href={`/courses/${subject.toLowerCase()}`}>
       <div class="grid">
         {#each Object.values(subjects[subject]) as course}
           <Card title={course.name} href={`/courses/${subject.toLowerCase()}/${course.name.toLowerCase().split(' ').join('_')}`} icon={course.icon}></Card>
