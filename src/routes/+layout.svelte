@@ -3,7 +3,7 @@
   import Button from '$lib/components/Button.svelte'
   import Nav from '$lib/components/Nav.svelte'
   import '../app.css'
-  import { user } from '$lib/user'
+  import { user, isBrowser } from '$lib/user'
 
   let links = [
     {
@@ -29,7 +29,7 @@
   let href = ''
 
   user.subscribe((user) => {
-    if (user) {
+    if (user && isBrowser) {
       anonymous = false
       name = user.name
       href = '/users/' + user.$id

@@ -3,7 +3,7 @@ import { ID, type Models } from 'appwrite'
 import { goto } from '$app/navigation'
 import { account } from '$lib/appwrite'
 
-const isBrowser = typeof window !== 'undefined'
+export const isBrowser = typeof window !== 'undefined'
 
 const createUser = () => {
   const store = writable<Models.User<Models.Preferences> | null>(null)
